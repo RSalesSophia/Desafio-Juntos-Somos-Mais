@@ -17,8 +17,12 @@ Os dados que receberemos estão nesse modelo ([https://www.kaggle.com/datasets/g
 A solução proposta segue o seguinte fluxo:
 1. Eventos de pedidos gerados pela aplicação transacional são enviados em tempo real ao Confluent Kafka.  
 2. Do Kafka, os dados são consumidos e armazenados no Azure Blob Storage no formato Delta Lake. 
-3. O Databricks acessa os dados armazenados, realiza processamento em camadas (Medalhão: Bronze, Silver e Gold).
+3. O Databricks acessa os dados armazenados e realiza processamento em camadas (Medalhão: Bronze, Silver e Gold).
 4. Finalmente, os dados são disponibilizados no Metabase para visualização pelos usuários finais.
+   
+
+![juntos_somos_mais drawio](https://github.com/user-attachments/assets/de5a74eb-7fab-4648-b240-a280d72b0e10)
+
 
 ### Tecnologias
 
