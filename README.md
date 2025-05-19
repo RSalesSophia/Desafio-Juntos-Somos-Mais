@@ -67,7 +67,7 @@ A Arquitetura Medalhão é composta por três camadas principais:
 
 Essa abordagem garante maior organização e governança dos dados, além de facilitar a manutenção, reprocessamentos e auditorias. Também assegura **princípios ACID** (Atomicidade, Consistência, Isolamento e Durabilidade) com uso de **Delta Lake**, permitindo confiabilidade e versionamento dos dados ao longo das transformações.
 
-**Por que utilizar o Databricks neste etapa?**
+**Por que utilizar o Databricks nesta etapa?**
 - **Integração nativa com Azure e Blob Storage:** Permite acesso otimizado aos dados com segurança e performance;
 - **Suporte nativo ao Delta Lake:** Facilita a aplicação da arquitetura Bronze → Silver → Gold, com controle de versões e updates transacionais;
 - **Ambiente colaborativo:** Possibilita que engenheiros de dados, analistas e cientistas trabalhem juntos em notebooks com Python, SQL, PySpark e Scala;
