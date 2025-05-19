@@ -21,7 +21,8 @@ A solução proposta segue o seguinte fluxo:
 4. Finalmente, os dados são disponibilizados no Metabase para visualização pelos usuários finais.
    
 
-![diagrama drawio](https://github.com/user-attachments/assets/0a117dcb-65d1-49d7-8d6f-3be36547f2c0)
+![jsm_diagrama drawio](https://github.com/user-attachments/assets/d000222e-43d9-43df-bae4-4178d5b46d47)
+
 
 
 
