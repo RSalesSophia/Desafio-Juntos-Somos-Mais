@@ -55,7 +55,9 @@ Para este projeto, utilizaremos especificamente o **Blob Storage** (Binary Large
 - **Alta disponibilidade e segurança:** Oferece redundância geográfica, criptografia em repouso e integração com o Azure Active Directory para controle de acesso;
 - **Desacoplamento dos sistemas:** Armazena os dados de forma independente do Kafka, permitindo que diferentes áreas (engenharia, BI, ciência de dados) acessem os dados sem impacto na ingestão.
 
-#### Processamento  
+#### Processamento e Orquestração
+
+**Processamento** 
 
 Após armazenarmos os dados brutos no Azure Storage, utilizaremos o **Databricks** para processá-los e aplicar a **Arquitetura em Camadas (Medalhão)** — um padrão amplamente adotado para organizar dados em pipelines analíticos.
 
@@ -67,11 +69,21 @@ A Arquitetura Medalhão é composta por três camadas principais:
 
 Essa abordagem garante maior organização e governança dos dados, além de facilitar a manutenção, reprocessamentos e auditorias. Também assegura **princípios ACID** (Atomicidade, Consistência, Isolamento e Durabilidade) com uso de **Delta Lake**, permitindo confiabilidade e versionamento dos dados ao longo das transformações.
 
-**Por que utilizar o Databricks nesta etapa?**
-- **Integração nativa com Azure e Blob Storage:** Permite acesso otimizado aos dados com segurança e performance;
-- **Suporte nativo ao Delta Lake:** Facilita a aplicação da arquitetura Bronze → Silver → Gold, com controle de versões e updates transacionais;
-- **Ambiente colaborativo:** Possibilita que engenheiros de dados, analistas e cientistas trabalhem juntos em notebooks com Python, SQL, PySpark e Scala;
-- **Escalabilidade e performance:** Ideal para processar grandes volumes de dados com clusters elásticos e paralelismo automático.
+   - **Por que utilizar o Databricks nesta etapa?**
+      - **Integração nativa com Azure e Blob Storage:** Permite acesso otimizado aos dados com segurança e performance;
+      - **Suporte nativo ao Delta Lake:** Facilita a aplicação da arquitetura Bronze → Silver → Gold, com controle de versões e updates transacionais;
+      - **Ambiente colaborativo:** Possibilita que engenheiros de dados, analistas e cientistas trabalhem juntos em notebooks com Python, SQL, PySpark e Scala;
+      - **Escalabilidade e performance:** Ideal para processar grandes volumes de dados com clusters elásticos e paralelismo automático.
+
+**Orquestração**
+
+Para simplificar e centralizar a gestão da solução de dados, utilizaremas o Databricks como orquestrador dos pipelines. Essa escolha permite que o desenvolvimento, a execução e o monitoramento dos fluxos de dados ocorram de forma integrada na mesma plataforma.
+
+   - **Por que utilizar o Databricks nesta etapa?**
+     - **Criação de workflows diretamente nos notebooks:** facilita a prototipação e execução de tarefas com código versionado e reutilizável; 
+     - **Gestão robusta de falhas e dependências:** suporta tentativas automáticas, alertas por e-mail, Slack e outras integrações para garantir monitoramento contínuo; 
+      - **Execução contínua para dados em streaming:** ideal para pipelines em tempo real, com controle de checkpoint e tolerância a falhas;
+      - **Pipelines modulares:** permite encadear múltiplas tarefas com dependências explícitas, promovendo maior controle e reutilização de etapas do processo.
 
 #### Visualização e consumo dos dados
 
